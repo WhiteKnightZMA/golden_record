@@ -1,0 +1,10 @@
+@import '@styles/variables/pallete.css';
+
+.header {
+  background-color: var(--color-header-background);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
