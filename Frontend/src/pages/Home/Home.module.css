@@ -1,0 +1,48 @@
+@import '@styles/variables/pallete.css';
+@import '@styles/variables/main.css';
+
+.homePage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title,
+.secondaryTitle {
+  font-weight: var(--font-weight-400);
+}
+
+.secondaryTitle {
+  margin-bottom: 60px;
+}
+
+.title {
+  margin-block: 50px 30px;
+  font-size: var(--font-size-h-xxl);
+  color: var(--color-text-black);
+  letter-spacing: -1px;
+}
+
+.secondaryTitle {
+  font-size: var(--font-size-large-32);
+  font-size: 32px;
+  color: var(--color-text-grey);
+}
+
+.golden {
+  color: var(--color-primary-gold);
+  font-weight: var(--font-weight-500);
+}
+
+.record {
+  color: var(--color-primary-blue);
+  font-weight: var(--font-weight-500);
+}
+
+.formWrapper {
+  background-color: var(--color-form-background);
+  border-radius: 24px;
+  outline: 1px solid var(--color-form-outline);
+  width: 892px;
+  cursor: pointer;
+}
