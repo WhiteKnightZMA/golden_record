@@ -1,7 +1,7 @@
 import { PageLayout } from "@app/layouts/PageLayout";
 import { FC } from "react";
 import s from "./Home.module.css";
-import { Form } from "@modules/Form";
+import { Form } from "@/modules/Form";
 
 export const Home: FC = () => {
   return (

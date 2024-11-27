@@ -5,15 +5,15 @@ interface IChooseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-export const ChooseButton: FC<IChooseButton> = ({
+export const CancelButton: FC<IChooseButton> = ({
   className = "",
   ...props
 }) => {
   return (
     <Button
       type="button"
-      text="Выберите файлы"
-      variant="primary-blue"
+      text="Отменить"
+      variant="primary-gold"
       size="XL"
       {...props}
       className={className}

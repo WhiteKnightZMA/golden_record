@@ -1,18 +1,18 @@
 import { Button } from "@/shared/ui/Button";
 import { ButtonHTMLAttributes, FC } from "react";
 
-interface IChooseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IConfirmButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-export const ChooseButton: FC<IChooseButton> = ({
+export const ConfirmButton: FC<IConfirmButton> = ({
   className = "",
   ...props
 }) => {
   return (
     <Button
       type="button"
-      text="Выберите файлы"
+      text="Подтвердить"
       variant="primary-blue"
       size="XL"
       {...props}
