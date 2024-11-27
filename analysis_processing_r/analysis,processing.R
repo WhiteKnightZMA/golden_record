@@ -1,11 +1,13 @@
-function_r <- function(path_file){
+function_r <- function(path_file, path_to_r_scripts){
+# path_to_r_scripts <- "G:/repo/golden_record/analysis_processing_r/"
+# path_file <- "G:/WD/t1_hack/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
 library(openxlsx)
 library(tidyverse)
-source("G:/repo/universal/my_functions.R") 
-source("G:/repo/golden_record/analysis_processing_r/validate_snils.R") 
-source("G:/repo/golden_record/analysis_processing_r/validate_inn.R") 
+  setwd(path_to_r_scripts)
+source("my_functions.R") 
+source("validate_snils.R") 
+source("validate_inn.R") 
 
-# path_file <- "G:/WD/t1_hack/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
 input_data <- read.csv(path_file)
 #delete full duplicates
 input_data <- u(input_data)
