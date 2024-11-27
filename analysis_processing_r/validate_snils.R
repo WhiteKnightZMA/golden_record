@@ -40,4 +40,4 @@ validate_snils <- function(snils) {
 # Example usage
 snils_number <- "11223344595"
 snils_number <- 11223344595
-validate_snils_11(snils_number)
+validate_snils(snils_number)
