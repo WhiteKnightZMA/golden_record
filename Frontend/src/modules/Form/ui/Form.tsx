@@ -4,6 +4,7 @@ import s from "./Form.module.css";
 import { ChooseButton } from "../../ChooseButton/ChooseButton";
 import cloudIcon from "@assets/icons/cloud.svg";
 import { ConfirmFiles } from "../../ConfirmFiles/ui/ConfirmFiles";
+import { useUploadFile } from "../api/useUploadFile";
 
 interface IForm {
   files: FileList | null;
@@ -14,8 +15,10 @@ export const Form: FC = () => {
 
   const { handleSubmit, register, watch, setValue } = useForm<IForm>();
 
+  const { uploadFile } = useUploadFile();
+
   const onSubmit = (data) => {
-    console.log(data);
+    uploadFile(data.files[0]);
   };
 
   const files = watch("files");

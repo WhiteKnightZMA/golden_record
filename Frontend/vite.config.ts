@@ -17,6 +17,7 @@ export default defineConfig({
       "@hooks": resolve(__dirname, "src/shared/hooks"),
       "@components": resolve(__dirname, "src/shared/components"),
       "@assets": resolve(__dirname, "src/shared/assets"),
+      "@api": resolve(__dirname, "src/shared/api"),
       "@ui": resolve(__dirname, "src/shared/ui"),
     },
   },

@@ -27,6 +27,7 @@
       "@hooks/*": ["src/shared/hooks/*"],
       "@components/*": ["src/shared/components/*"],
       "@assets/*": ["src/shared/assets/*"],
+      "@api/*": ["src/shared/api/*"],
       "@ui/*": ["src/shared/ui/*"],
     },
 
