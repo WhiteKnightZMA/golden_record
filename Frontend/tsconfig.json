@@ -22,6 +22,7 @@
       "@modules/*": ["src/modules/*"],
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],
+      "@store/*": ["src/store/*"],
       "@shared/*": ["src/shared/*"],
       "@styles/*": ["src/styles/*"],
       "@hooks/*": ["src/shared/hooks/*"],

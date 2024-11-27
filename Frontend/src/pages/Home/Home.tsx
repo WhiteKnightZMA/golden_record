@@ -2,8 +2,17 @@ import { PageLayout } from "@app/layouts/PageLayout";
 import { FC } from "react";
 import s from "./Home.module.css";
 import { Form } from "@/modules/Form";
+import { useUploadFile } from "@/modules/Form/api/useUploadFile";
+import { DownloadFiles } from "@/modules/DownloadFiles";
+import { showFormStore } from "@store/showForm";
+import { observer } from "mobx-react-lite";
 
-export const Home: FC = () => {
+export const Home: FC = observer(() => {
+  const { uploadFile, isError } = useUploadFile();
+
+  const { isShowForm } = showFormStore;
+
+  const handleUploadFile = (file: File) => uploadFile(file);
   return (
     <PageLayout>
       <div className={s.homePage}>
@@ -15,9 +24,14 @@ export const Home: FC = () => {
           Найдите золотую запись в большом наборе данных
         </h2>
         <div className={s.formWrapper}>
-          <Form />
+          {isShowForm ? (
+            <Form onFileUpload={handleUploadFile} />
+          ) : (
+            <DownloadFiles />
+          )}
+          {}
         </div>
       </div>
     </PageLayout>
   );
-};
+});

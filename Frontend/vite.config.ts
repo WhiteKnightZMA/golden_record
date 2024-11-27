@@ -12,6 +12,7 @@ export default defineConfig({
       "@modules": resolve(__dirname, "src/modules"),
       "@pages": resolve(__dirname, "src/pages"),
       "@router": resolve(__dirname, "src/router"),
+      "@store": resolve(__dirname, "src/store"),
       "@shared": resolve(__dirname, "src/shared"),
       "@styles": resolve(__dirname, "src/styles"),
       "@hooks": resolve(__dirname, "src/shared/hooks"),
