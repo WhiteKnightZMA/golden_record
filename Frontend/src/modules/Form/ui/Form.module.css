@@ -30,6 +30,6 @@
   font-size: var(--font-size-h-s);
   max-width: 408px;
   text-align: center;
-  margin-block: 14px 64px;
-
+  margin-block: 14px auto;
+  letter-spacing: -0.5px;
 }
