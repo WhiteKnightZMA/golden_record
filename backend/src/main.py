@@ -13,10 +13,6 @@ async def upload_file(file: UploadFile = File(...)):
     output_file = "updated_file.csv"
     data.to_csv(output_file, index=False)
     
-    return {"message": f"Найдено {n} золотых записей.", "file": output_file}
-
-@app.get("/download/")
-async def download_file():
     return FileResponse("updated_file.csv", media_type="text/csv", filename="updated_file.csv")
 
 if __name__ == "__main__":
