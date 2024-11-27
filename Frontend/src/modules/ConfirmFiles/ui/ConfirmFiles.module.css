@@ -16,7 +16,7 @@
 .fileList {
   display: flex;
   gap: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 85px;
 }
 
 .fileItem {
