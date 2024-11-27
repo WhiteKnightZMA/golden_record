@@ -22,5 +22,17 @@ export default defineConfig({
       "@ui": resolve(__dirname, "src/shared/ui"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+    host: true,
+    strictPort: true,
+    port: 5173,
+  },
   plugins: [react()],
 });

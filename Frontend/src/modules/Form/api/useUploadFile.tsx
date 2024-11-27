@@ -4,8 +4,11 @@ import { showFormStore } from "@/store/showForm";
 
 export const useUploadFile = () => {
   const { mutate, isError, isSuccess, isPending } = useMutation({
-    mutationFn: ({ file }: { file: File }) => uploadFileApi.uploadFile(file),
-    onError: () => showFormStore.hideForm(),
+    mutationFn: async ({ file }: { file: File }) => {
+      const response = await uploadFileApi.uploadFile(file);
+      console.log(response.data);
+    },
+    onSuccess: () => showFormStore.hideForm(),
   });
 
   const uploadFile = (file: File) => mutate({ file });

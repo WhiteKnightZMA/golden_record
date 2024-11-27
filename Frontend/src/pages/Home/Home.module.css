@@ -47,3 +47,16 @@
   height: 434px;
   width: 892px;
 }
+
+@media (max-width: 1440px) {
+  .title {
+    margin-block: 30px 20px;
+    font-size: var(--font-size-h-l);
+    ;
+  }
+
+  .secondaryTitle {
+    font-size: var(--font-size-h-s);
+    color: var(--color-text-grey);
+  }
+}

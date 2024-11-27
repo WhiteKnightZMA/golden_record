@@ -9,3 +9,9 @@
   justify-content: center;
   cursor: pointer;
 }
+
+@media (max-width: 1440px) {
+  .header {
+    height: 60px;
+  }
+}
