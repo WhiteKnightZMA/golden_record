@@ -1,10 +1,12 @@
+function_r <- function(path_file){
 library(openxlsx)
 library(tidyverse)
 source("G:/repo/universal/my_functions.R") 
 source("G:/repo/golden_record/analysis_processing_r/validate_snils.R") 
 source("G:/repo/golden_record/analysis_processing_r/validate_inn.R") 
 
-input_data <- read.csv("G:/WD/t1_hack/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv")
+# path_file <- "G:/WD/t1_hack/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
+input_data <- read.csv(path_file)
 #delete full duplicates
 input_data <- u(input_data)
 
@@ -187,14 +189,16 @@ for(i in grep("fin_loan", colnames(input_data))){#по актуальности 
 
 ###
 
-table(input_data$source_cd)
+# table(input_data$source_cd)
 
-View(input_data[ which(input_data$source_cd == ""), ])
+# View(input_data[ which(input_data$source_cd == ""), ])
 
 
-View(input_data[ which(input_data$source_cd != "" & input_data$stream_favorite_show=="Побег из Шоушенка"), ])
-
-colnames(input_data)           
-
+# View(input_data[ which(input_data$source_cd != "" & input_data$stream_favorite_show=="Побег из Шоушенка"), ])
+path2 <- gsub(".csv", "after_r.csv", path_file)
+write.csv(input_data, path2, row.names = F)
+# colnames(input_data)           
+return(path2)
+}
 
 
