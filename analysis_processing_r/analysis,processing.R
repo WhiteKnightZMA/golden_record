@@ -1,5 +1,5 @@
-function_r <- function(path_file, path_to_r_scripts){
-# path_to_r_scripts <- "G:/repo/golden_record/analysis_processing_r/"
+function_r <- function(path_file){
+path_to_r_scripts <- "analysis_processing_r/"
 # path_file <- "G:/WD/t1_hack/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
 library(openxlsx)
 library(tidyverse)
