@@ -1,20 +1,28 @@
 import { PageLayout } from "@app/layouts/PageLayout";
-import { FC } from "react";
+import { FC, useState } from "react";
 import s from "./Home.module.css";
 import { Form } from "@/modules/Form";
 import { useUploadFile } from "@/modules/Form/api/useUploadFile";
-import { DownloadFiles } from "@/modules/DownloadFiles";
 import { showFormStore } from "@store/showForm";
 import { observer } from "mobx-react-lite";
 import { Loader } from "@/shared/components/Loader";
 import { Error } from "@/shared/components/Error";
+import { DownloadFile } from "@/modules/DownloadFile";
 
 export const Home: FC = observer(() => {
   const { uploadFile, isError, isPending, isSuccess } = useUploadFile();
+  const [processedFile, setProccesFile] = useState({
+    name: "",
+    link: "",
+  });
 
   const { isShowForm } = showFormStore;
 
-  const handleUploadFile = (file: File) => uploadFile(file);
+  const handleUploadFile = (file: File) => {
+    const processedFile = uploadFile(file);
+    setProccesFile(processedFile);
+  };
+
   return (
     <PageLayout>
       <div className={s.homePage}>
@@ -28,7 +36,7 @@ export const Home: FC = observer(() => {
         <div className={s.formWrapper}>
           {isShowForm && !isPending && <Form onFileUpload={handleUploadFile} />}
           {isPending && <Loader />}
-          {isSuccess && !isShowForm && <DownloadFiles />}
+          {isSuccess && !isShowForm && <DownloadFile file={processedFile} />}
           {isError && !isShowForm && <Error />}
         </div>
       </div>

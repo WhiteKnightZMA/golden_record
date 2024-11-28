@@ -1,4 +1,4 @@
-.downloadFiles {
+.downloadFile {
   padding: 64px;
   height: 100%;
   display: flex;
@@ -36,7 +36,7 @@
 }
 
 @media (max-width: 1440px) {
-  .downloadFiles {
+  .downloadFile {
     padding: 48px;
   }
 }
