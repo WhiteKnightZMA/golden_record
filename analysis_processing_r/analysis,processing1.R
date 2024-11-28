@@ -19,8 +19,8 @@ path_to_r_scripts <- args[2]
 # path_to_r_scripts <- "analysis_processing_r/"
 # path_file <- "G:/WD/t1_hack/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
 #
-path_to_r_scripts <- "C:/Users/S/Documents/repo/golden_record/analysis_processing_r"
-path_file <- "C:/Users/S/Documents/WD/t1/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
+# path_to_r_scripts <- "C:/Users/S/Documents/repo/golden_record/analysis_processing_r"
+# path_file <- "C:/Users/S/Documents/WD/t1/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
 library(openxlsx)
 library(openxlsx)
 library(tidyverse)
