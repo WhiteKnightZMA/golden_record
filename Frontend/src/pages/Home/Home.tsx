@@ -7,6 +7,7 @@ import { DownloadFiles } from "@/modules/DownloadFiles";
 import { showFormStore } from "@store/showForm";
 import { observer } from "mobx-react-lite";
 import { Loader } from "@/shared/components/Loader";
+import { Error } from "@/shared/components/Error";
 
 export const Home: FC = observer(() => {
   const { uploadFile, isError, isPending, isSuccess } = useUploadFile();
@@ -27,7 +28,8 @@ export const Home: FC = observer(() => {
         <div className={s.formWrapper}>
           {isShowForm && !isPending && <Form onFileUpload={handleUploadFile} />}
           {isPending && <Loader />}
-          {isError && !isShowForm && <DownloadFiles />}
+          {isSuccess && !isShowForm && <DownloadFiles />}
+          {isError && !isShowForm && <Error />}
         </div>
       </div>
     </PageLayout>
