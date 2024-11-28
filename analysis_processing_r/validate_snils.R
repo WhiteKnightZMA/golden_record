@@ -41,3 +41,11 @@ validate_snils <- function(snils) {
 snils_number <- "11223344595"
 snils_number <- 11223344595
 validate_snils(snils_number)
+validate_snils_by_number_of_characters <- function(snils) {
+  # Check if input is numeric and 11 digits long
+  if (!grepl("^[0-9]{11}$", snils)) {
+    return(F)
+  }else{
+return(T)
+  }
+}

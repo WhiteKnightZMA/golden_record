@@ -64,3 +64,13 @@ validate_inn(inn_10)  # Expected: "Valid 10-digit INN."
 validate_inn(invalid_inn) # Expected: "Invalid 10-digit INN."
 validate_inn(w_inn) # Expected: "Valid 12-digit INN."
 validate_inn(real_inn) # Expected: "Valid 12-digit INN."
+validate_inn_by_number_of_characters <- function(inn) {
+  inn <- as.character(inn)
+  # Check if input is numeric and either 10 or 12 digits long
+  if (!grepl("^[0-9]{10,12}$", inn)) {
+    return("Invalid input. INN must be 10 or 12 digits.")
+  } else {
+    return("Valid 12-digit INN.")
+  }
+}
+  
