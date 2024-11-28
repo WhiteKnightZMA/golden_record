@@ -11,17 +11,13 @@ import { DownloadFile } from "@/modules/DownloadFile";
 
 export const Home: FC = observer(() => {
   const { uploadFile, isError, isPending, isSuccess } = useUploadFile();
-  const [processedFile, setProccesFile] = useState({
-    name: "",
-    link: "",
-  });
+  const [processedFile, setProccesFile] = useState("");
 
   const { isShowForm } = showFormStore;
 
-  const handleUploadFile = (file: File) => {
-    const processedFile = uploadFile(file);
-    console.log(processedFile)
-    // setProccesFile(processedFile);
+  const handleUploadFile = async (file: File) => {
+    const processedFile = await uploadFile(file);
+    setProccesFile(processedFile)
   };
 
   return (
