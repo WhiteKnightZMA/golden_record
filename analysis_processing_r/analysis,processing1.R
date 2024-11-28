@@ -316,8 +316,6 @@ gold_records <- input_data %>% filter(!is.na(person_ids)) %>% group_by(person_id
 
 path2 <- gsub(".csv", "after_r.csv", path_file)
 write.csv(gold_records, path2, row.names = F)
-# colnames(input_data)           
-return(path2)
-}
+
 
 
