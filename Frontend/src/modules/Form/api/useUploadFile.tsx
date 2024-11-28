@@ -6,6 +6,7 @@ export const useUploadFile = () => {
   const { mutate, isError, isSuccess, isPending } = useMutation({
     mutationFn: async ({ file }: { file: File }) => {
       const response = await uploadFileApi.uploadFile(file);
+      console.log(response)
       return response;
     },
     onSettled: () => showFormStore.hideForm(),

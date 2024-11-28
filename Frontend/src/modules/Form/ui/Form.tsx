@@ -61,7 +61,7 @@ export const Form: FC<FormProps> = ({ onFileUpload }) => {
         <>
           <img className={s.cloud} src={cloudIcon} alt="Cloud" />
           <p className={s.text}>
-            Перетащите .csv файлы сюда, чтобы получить золотую запись
+            Перетащите .csv файл сюда, чтобы получить золотую запись
           </p>
           <input
             {...register("files")}

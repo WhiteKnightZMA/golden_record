@@ -20,7 +20,8 @@ export const Home: FC = observer(() => {
 
   const handleUploadFile = (file: File) => {
     const processedFile = uploadFile(file);
-    setProccesFile(processedFile);
+    console.log(processedFile)
+    // setProccesFile(processedFile);
   };
 
   return (
