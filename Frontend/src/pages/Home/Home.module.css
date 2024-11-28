@@ -54,12 +54,16 @@
 @media (max-width: 1440px) {
   .title {
     margin-block: 30px 20px;
-    font-size: var(--font-size-h-l);
-    ;
+    font-size: var(--font-size-h-xl);
   }
 
   .secondaryTitle {
-    font-size: var(--font-size-h-s);
-    color: var(--color-text-grey);
+    font-size: var(--font-size-large-32);
+  }
+
+  .formWrapper {
+    border-radius: 20px;
+    height: 380px;
+    width: 744px; 
   }
 }

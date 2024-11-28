@@ -34,3 +34,9 @@
   text-overflow: ellipsis;
   letter-spacing: -0.5px;
 }
+
+@media (max-width: 1440px) {
+  .downloadFiles {
+    padding: 48px;
+  }
+}

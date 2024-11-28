@@ -52,3 +52,15 @@
 .button-full {
   width: 100%;
 }
+
+@media (max-width: 1440px) {
+  .button {
+    border-radius: 20px;
+    padding: 20px;
+    font-size: var(--font-size-h-xs);
+  }
+
+  .button-xl {
+    min-width: 300px;
+  }
+}
