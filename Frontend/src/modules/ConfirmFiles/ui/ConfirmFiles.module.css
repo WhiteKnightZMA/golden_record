@@ -38,3 +38,21 @@
   text-overflow: ellipsis;
   letter-spacing: -0.5px;
 }
+
+@media (max-width: 1440px) {
+  .buttonsWrapper {
+    gap: 48px;
+  }
+
+  .fileItem {
+    width: 120px;
+  }
+
+  .fileIcon {
+    width: 80px;
+  }
+
+  .fileName {
+    font-size: var(--font-size-h-xs);
+  }
+}

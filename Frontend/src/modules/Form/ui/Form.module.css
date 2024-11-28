@@ -33,3 +33,18 @@
   margin-block: 14px auto;
   letter-spacing: -0.5px;
 }
+
+@media (max-width: 1440px) {
+  .form {
+    padding: 48px;
+  }
+
+  .text {
+    font-size: var(--font-size-h-xs);
+    max-width: 350px;
+  }
+
+  .cloud {
+    width: 80px;
+  }
+}

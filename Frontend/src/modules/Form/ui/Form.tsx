@@ -59,7 +59,7 @@ export const Form: FC<FormProps> = ({ onFileUpload }) => {
         />
       ) : (
         <>
-          <img src={cloudIcon} alt="Cloud" />
+          <img className={s.cloud} src={cloudIcon} alt="Cloud" />
           <p className={s.text}>
             Перетащите .csv файлы сюда, чтобы получить золотую запись
           </p>
