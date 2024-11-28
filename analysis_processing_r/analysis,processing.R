@@ -1,9 +1,7 @@
 function_r <- function(path_file, project_root)
 {
   path_to_r_scripts <- file.path(project_root, "analysis_processing_r")
-
   # path_file <- "G:/WD/t1_hack/ds_dirty_fin_20241004/ds_dirty_fin_202410041147.csv"
-
   library(openxlsx)
   library(tidyverse)
 
@@ -11,9 +9,14 @@ function_r <- function(path_file, project_root)
 
   source("my_functions.R") 
   source("validate_snils.R") 
-  source("validate_inn.R") 
+  source("validate_inn.R")
 
-  input_data <- read.csv(path_file, encoding = 'UTF-8')
+  print("LIBRARIES LOADED")
+
+  input_data <- read.csv(path_file, encoding = 'UTF-8', sep = ",")
+
+  #print(class(input_data))
+
   #delete full duplicates
   input_data <- u(input_data)
 
@@ -42,7 +45,7 @@ function_r <- function(path_file, project_root)
   #checkings
   # different create dates for client_id
 
-  print(names(input_data))
+  #print(names(input_data))
 
   required_columns <- c("client_id", "create_date")
   if (!all(required_columns %in% names(input_data))) {
@@ -65,9 +68,17 @@ function_r <- function(path_file, project_root)
   which(duplicated(df_id_create$client_id))
   df_id_create$client_id[which(duplicated(df_id_create$client_id))
   ]
-  View(input_data[which(input_data$source_cd == ""), ])
+
+  filtered_data <- input_data[is.na(input_data$source_cd) | input_data$source_cd == "", ]
+  if (nrow(filtered_data) > 0) {
+    View(filtered_data)
+  } else {
+    print("Нет строк, соответствующих условию.")
+  }
+  #View(input_data[is.na(input_data$source_cd) | input_data$source_cd == "", ])
+
   ### delete id with different dates
-  input_data <- input_data[ -which(input_data$source_cd == ""), ]
+  input_data <- input_data[!(is.na(input_data$source_cd) | input_data$source_cd == ""), ]
 
   #есть ли разные id с разными sources? - 
   df_id_create <- u(input_data[, c("client_id", "source_cd")])
@@ -90,7 +101,13 @@ function_r <- function(path_file, project_root)
   which(duplicated(df_id_create$client_id))
   df_id_create$client_id[which(duplicated(df_id_create$client_id))
   ]
-  View(input_data[which(input_data$source_cd == ""), ])
+
+  filtered_data <- input_data[is.na(input_data$source_cd) | input_data$source_cd == "", ]
+  if (nrow(filtered_data) > 0) {
+    View(filtered_data)
+  } else {
+    print("Нет строк, соответствующих условию.")
+  }
 
 
 

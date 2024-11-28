@@ -43,6 +43,9 @@ async def upload_file(file: UploadFile = File(...)):
     try:
         processed_file_path = func_r(input_file, project_root)
         
+        if isinstance(processed_file_path, ro.vectors.StrVector):
+            processed_file_path = str(processed_file_path[0])
+        
         shutil.move(processed_file_path, output_file)
 
         with zipfile.ZipFile(zip_file, 'w') as zipf:
