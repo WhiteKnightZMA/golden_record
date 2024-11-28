@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { uploadFileApi } from "./api";
-import { showFormStore } from "@/store/showForm";
+import { showFormStore } from "@store/showForm";
 
 export const useUploadFile = () => {
   const { mutate, isError, isSuccess, isPending } = useMutation({
@@ -8,7 +8,7 @@ export const useUploadFile = () => {
       const response = await uploadFileApi.uploadFile(file);
       console.log(response.data);
     },
-    onSuccess: () => showFormStore.hideForm(),
+    onSettled: () => showFormStore.hideForm(),
   });
 
   const uploadFile = (file: File) => mutate({ file });

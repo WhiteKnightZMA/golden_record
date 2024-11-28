@@ -6,9 +6,10 @@ import { useUploadFile } from "@/modules/Form/api/useUploadFile";
 import { DownloadFiles } from "@/modules/DownloadFiles";
 import { showFormStore } from "@store/showForm";
 import { observer } from "mobx-react-lite";
+import { Loader } from "@/shared/components/Loader";
 
 export const Home: FC = observer(() => {
-  const { uploadFile, isError } = useUploadFile();
+  const { uploadFile, isError, isPending, isSuccess } = useUploadFile();
 
   const { isShowForm } = showFormStore;
 
@@ -24,12 +25,9 @@ export const Home: FC = observer(() => {
           Найдите золотую запись в большом наборе данных
         </h2>
         <div className={s.formWrapper}>
-          {isShowForm ? (
-            <Form onFileUpload={handleUploadFile} />
-          ) : (
-            <DownloadFiles />
-          )}
-          {}
+          {isShowForm && !isPending && <Form onFileUpload={handleUploadFile} />}
+          {isPending && <Loader />}
+          {isError && !isShowForm && <DownloadFiles />}
         </div>
       </div>
     </PageLayout>
